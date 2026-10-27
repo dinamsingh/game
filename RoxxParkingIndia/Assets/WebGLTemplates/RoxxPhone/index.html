@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101719">
+  <link rel="icon" href="data:,">
+  <title>Roxx Parking India — Play</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101719;color:#f1f0e8;font-family:system-ui,sans-serif}
+    #stage{position:fixed;inset:0;background:#101719}canvas{display:block;width:100%;height:100%;touch-action:none;outline:none}
+    #cover{position:absolute;inset:0;z-index:3;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 80% 0,#34423d 0,transparent 60%),#101719}
+    .card{width:min(560px,100%);border-top:4px solid #ff7424;padding:26px 0}
+    .brand{font-weight:800;letter-spacing:.16em;font-size:12px;color:#ff8c4c}.version{float:right;color:#9ca9a7;letter-spacing:0;font-weight:500}
+    h1{font-size:clamp(34px,7vw,58px);letter-spacing:-.055em;line-height:1.02;margin:24px 0 16px;max-width:500px}
+    p{color:#b9c5c1;line-height:1.6;margin:0 0 20px;font-size:15px}.specs{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#eee7d4;margin:22px 0}
+    button{font:inherit;border:0;cursor:pointer}.play{width:100%;padding:18px 20px;background:#ff7424;color:#101719;font-weight:850;font-size:16px;border-radius:3px;text-align:left;display:flex;justify-content:space-between}
+    button:focus-visible{outline:3px solid #f5e6bc;outline-offset:4px}.play:disabled{opacity:.65;cursor:wait}.foot{font-size:12px;color:#9ca9a7;margin-top:18px}
+    #progress{width:100%;height:5px;background:#36413e;margin-top:20px;border-radius:4px;overflow:hidden}#bar{height:100%;width:0;background:#ff8c4c;transition:width .2s}
+    #status{min-height:24px;display:block;margin-top:10px;color:#d4ded8;font-size:13px;line-height:1.5}#retry{color:#f1f0e8;border:1px solid #67746f;background:none;padding:10px 16px;margin-top:16px;border-radius:3px}
+    #fullscreen{display:none;position:absolute;bottom:max(6px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:2;color:#e7e8dc;background:#101719b3;border:1px solid #68726a;padding:5px 12px;border-radius:4px;font-size:11px}
+    #rotate{display:none;position:absolute;top:max(8px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:2;width:max-content;max-width:95%;padding:8px 12px;background:#101719eb;border:1px solid #64726c;font-size:12px;pointer-events:none}
+    [hidden]{display:none!important}@media(orientation:portrait){body.playing #rotate{display:block}}@media(max-height:430px){.card{padding:12px 0}.brand{font-size:11px}h1{font-size:34px;margin:14px 0 10px}p{font-size:13px;margin-bottom:12px}.specs{margin:12px 0;font-size:11px}.play{padding:14px 18px}.foot{margin-top:12px}}
+  </style>
+</head>
+<body>
+<main id="stage">
+  <canvas id="game" tabindex="0" aria-label="Roxx Parking India game. Use the on-screen wheel, accelerator and brake."></canvas>
+  <section id="cover" aria-label="Start game">
+    <div class="card">
+      <div class="brand">ROXX / PARKING INDIA <span class="version">v{{{ PRODUCT_VERSION }}}</span></div>
+      <h1>Your Thar.<br>Your perfect line.</h1>
+      <p>Practice your parking or take on twelve Expert Trials. Play here with the same touch controls.</p>
+      <div class="specs">24 courses &nbsp;·&nbsp; Touch controls &nbsp;·&nbsp; No APK</div>
+      <button class="play" id="play"><span>PLAY IN BROWSER</span><span aria-hidden="true">↗</span></button>
+      <div id="progress" hidden role="progressbar" aria-label="Game loading" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="bar"></div></div>
+      <output id="status" aria-live="polite"></output>
+      <button id="retry" hidden>RELOAD GAME</button>
+      <p class="foot">Open in Chrome and turn your phone sideways. The first load downloads game files. Progress is saved in this browser.</p>
+    </div>
+  </section>
+  <button id="fullscreen" aria-label="Toggle full screen">FULL SCREEN</button>
+  <aside id="rotate">Turn your phone sideways for the driving controls.</aside>
+</main>
+<script>
+  'use strict';
+  const stage=document.getElementById('stage'), canvas=document.getElementById('game');
+  const cover=document.getElementById('cover'),play=document.getElementById('play'),status=document.getElementById('status');
+  const progress=document.getElementById('progress'),bar=document.getElementById('bar'),retry=document.getElementById('retry'),full=document.getElementById('fullscreen');
+  let started=false;
+  async function fullscreen(){
+    try{if(!document.fullscreenElement){await stage.requestFullscreen();if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape');}else await document.exitFullscreen();}catch(_){/* Rotation/fullscreen can be restricted by the browser. */}
+  }
+  function fail(message){status.textContent=message;retry.hidden=false;play.hidden=true;cover.hidden=false;full.style.display='none';}
+  retry.onclick=()=>location.reload();full.onclick=fullscreen;
+  canvas.addEventListener('contextmenu',event=>event.preventDefault());
+  play.onclick=()=>{
+    if(started)return;
+    const probe=document.createElement('canvas');
+    if(!probe.getContext('webgl2')){fail('This browser needs WebGL 2. Try the latest Chrome on your Android phone.');return;}
+    started=true;play.disabled=true;play.querySelector('span').textContent='LOADING GAME';progress.hidden=false;status.textContent='Downloading game files…';
+    fullscreen();
+    const config={
+      dataUrl:'Build/{{{ DATA_FILENAME }}}',frameworkUrl:'Build/{{{ FRAMEWORK_FILENAME }}}',codeUrl:'Build/{{{ CODE_FILENAME }}}',
+      streamingAssetsUrl:'StreamingAssets',companyName:'{{{ COMPANY_NAME }}}',productName:'{{{ PRODUCT_NAME }}}',productVersion:'{{{ PRODUCT_VERSION }}}',
+      devicePixelRatio:Math.min(window.devicePixelRatio||1,1.25),
+      showBanner:(message,type)=>{if(type==='error')fail(message);else console.warn(message);}
+    };
+    const loader=document.createElement('script');loader.src='Build/{{{ LOADER_FILENAME }}}';
+    loader.onerror=()=>fail('Game files could not load. Check that the laptop and this phone are on the same Wi-Fi, then reload.');
+    loader.onload=()=>createUnityInstance(canvas,config,value=>{
+      const percent=Math.round(value*100);bar.style.width=percent+'%';progress.setAttribute('aria-valuenow',String(percent));
+      status.textContent=value>=.9?'Starting the game…':'Downloading game files / '+percent+'%';
+    }).then(instance=>{
+      window.roxxGame=instance;cover.hidden=true;document.body.classList.add('playing');full.style.display='block';canvas.focus();
+    }).catch(error=>fail('The game could not start: '+String(error)));
+    document.body.appendChild(loader);
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+/Library/
+/Temp/
+/Obj/
+/Logs/
+/UserSettings/
+/Builds/*
+!/Builds/Android/
+/Builds/Android/*
+!/Builds/Android/RoxxParkingIndia-0.6.1.apk
+/Tests/bin/
+*.csproj
+*.sln
+*.slnx
+.vs/
+.idea/
+
+/.utmp/

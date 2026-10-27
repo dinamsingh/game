@@ -1,0 +1,2117 @@
+{
+  "courses": [
+    {
+      "name": "First park",
+      "district": 0,
+      "difficulty": 1,
+      "spawnX": 0,
+      "spawnZ": -15,
+      "spawnYaw": 0,
+      "bayX": 0,
+      "bayZ": 13,
+      "bayYaw": 0,
+      "bayWidth": 3.6,
+      "bayLength": 6.5,
+      "mapWidth": 34,
+      "mapLength": 48,
+      "goldTime": 30,
+      "briefing": "Learn the brakes. Stop fully inside the bay.",
+      "route": [],
+      "barriers": [
+        {
+          "x": -4,
+          "z": 0,
+          "width": 0.4,
+          "length": 24,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 4,
+          "z": 0,
+          "width": 0.4,
+          "length": 24,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": false
+    },
+    {
+      "name": "Cross the school",
+      "district": 0,
+      "difficulty": 1,
+      "spawnX": -8,
+      "spawnZ": -16,
+      "spawnYaw": 0,
+      "bayX": 6,
+      "bayZ": 15,
+      "bayYaw": 0,
+      "bayWidth": 3.4,
+      "bayLength": 6.3,
+      "mapWidth": 34,
+      "mapLength": 48,
+      "goldTime": 45,
+      "briefing": "Follow both amber route points, then park.",
+      "route": [
+        {
+          "x": -8,
+          "z": -3,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 6,
+          "z": 7,
+          "gear": 0,
+          "radius": 2.7
+        }
+      ],
+      "barriers": [
+        {
+          "x": 0,
+          "z": -9,
+          "width": 0.5,
+          "length": 17,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -9,
+          "z": 6,
+          "width": 8,
+          "length": 0.4,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 11,
+          "z": 10,
+          "width": 0.4,
+          "length": 17,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": false
+    },
+    {
+      "name": "Corner judgement",
+      "district": 0,
+      "difficulty": 2,
+      "spawnX": 8,
+      "spawnZ": -16,
+      "spawnYaw": 0,
+      "bayX": -8,
+      "bayZ": 14,
+      "bayYaw": -90,
+      "bayWidth": 3.25,
+      "bayLength": 6.1,
+      "mapWidth": 34,
+      "mapLength": 48,
+      "goldTime": 50,
+      "briefing": "Turn across the lot. Square up to the sideways bay.",
+      "route": [
+        {
+          "x": 8,
+          "z": -2,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": -4,
+          "z": 12,
+          "gear": 0,
+          "radius": 2.7
+        }
+      ],
+      "barriers": [
+        {
+          "x": 0,
+          "z": -7,
+          "width": 0.5,
+          "length": 20,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 9,
+          "z": 9,
+          "width": 8,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -8,
+          "z": 9,
+          "width": 8,
+          "length": 0.4,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": false
+    },
+    {
+      "name": "Workshop delivery",
+      "district": 1,
+      "difficulty": 2,
+      "spawnX": -11,
+      "spawnZ": -20,
+      "spawnYaw": 0,
+      "bayX": 10,
+      "bayZ": 18,
+      "bayYaw": 0,
+      "bayWidth": 3.1,
+      "bayLength": 6,
+      "mapWidth": 40,
+      "mapLength": 56,
+      "goldTime": 60,
+      "briefing": "Clear the loading apron and swing around the divider.",
+      "route": [
+        {
+          "x": -11,
+          "z": -5,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 0,
+          "z": 6,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 10,
+          "z": 11,
+          "gear": 0,
+          "radius": 2.7
+        }
+      ],
+      "barriers": [
+        {
+          "x": -3,
+          "z": -11,
+          "width": 0.5,
+          "length": 22,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 7,
+          "z": 1,
+          "width": 12,
+          "length": 0.5,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -12,
+          "z": 17,
+          "width": 2,
+          "length": 4,
+          "yaw": 0,
+          "kind": "crate"
+        }
+      ],
+      "reversePark": false
+    },
+    {
+      "name": "Workshop reverse delivery",
+      "district": 1,
+      "difficulty": 3,
+      "spawnX": -10,
+      "spawnZ": -17,
+      "spawnYaw": 0,
+      "bayX": 8,
+      "bayZ": 0,
+      "bayYaw": 0,
+      "bayWidth": 3,
+      "bayLength": 5.9,
+      "mapWidth": 32,
+      "mapLength": 44,
+      "goldTime": 85,
+      "briefing": "Clear the crate corridor. Turn around the freight stack, line up beyond the service slot, then reverse in.",
+      "route": [
+        {
+          "x": -10,
+          "z": -5,
+          "gear": 0,
+          "radius": 1.8
+        },
+        {
+          "x": 0,
+          "z": 8,
+          "gear": 0,
+          "radius": 2
+        },
+        {
+          "x": 8,
+          "z": 13,
+          "gear": 0,
+          "radius": 1.8
+        },
+        {
+          "x": 8,
+          "z": 6,
+          "gear": -1,
+          "radius": 1.5,
+          "yaw": 0
+        }
+      ],
+      "barriers": [
+        {
+          "x": -14,
+          "z": -5,
+          "width": 3,
+          "length": 14,
+          "yaw": 0,
+          "kind": "crate"
+        },
+        {
+          "x": -5,
+          "z": -5,
+          "width": 5,
+          "length": 12,
+          "yaw": 0,
+          "kind": "crate"
+        },
+        {
+          "x": 3,
+          "z": 2,
+          "width": 3,
+          "length": 7,
+          "yaw": 0,
+          "kind": "container"
+        },
+        {
+          "x": 6.1,
+          "z": 0,
+          "width": 0.35,
+          "length": 8,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 9.9,
+          "z": 0,
+          "width": 0.35,
+          "length": 8,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 8,
+          "z": -4.4,
+          "width": 4.2,
+          "length": 0.35,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 13.5,
+          "z": 13,
+          "width": 3,
+          "length": 6,
+          "yaw": 0,
+          "kind": "crate"
+        }
+      ],
+      "reversePark": true
+    },
+    {
+      "name": "Blind side pocket",
+      "district": 1,
+      "difficulty": 3,
+      "spawnX": -11,
+      "spawnZ": -20,
+      "spawnYaw": 0,
+      "bayX": 9,
+      "bayZ": 10,
+      "bayYaw": 90,
+      "bayWidth": 2.95,
+      "bayLength": 5.8,
+      "mapWidth": 40,
+      "mapLength": 56,
+      "goldTime": 75,
+      "briefing": "Approach from the right, then back into the loading pocket.",
+      "route": [
+        {
+          "x": -10,
+          "z": 0,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 11,
+          "z": 19,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 16,
+          "z": 10,
+          "gear": -1,
+          "radius": 2,
+          "yaw": 90
+        }
+      ],
+      "barriers": [
+        {
+          "x": 9,
+          "z": 7.9,
+          "width": 8,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 9,
+          "z": 12.1,
+          "width": 8,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 4.3,
+          "z": 10,
+          "width": 0.45,
+          "length": 4.6,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -3,
+          "z": -9,
+          "width": 0.5,
+          "length": 22,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": true
+    },
+    {
+      "name": "Freight slalom",
+      "district": 2,
+      "difficulty": 3,
+      "spawnX": -15,
+      "spawnZ": -25,
+      "spawnYaw": 0,
+      "bayX": 12,
+      "bayZ": 25,
+      "bayYaw": 90,
+      "bayWidth": 2.9,
+      "bayLength": 5.8,
+      "mapWidth": 52,
+      "mapLength": 64,
+      "goldTime": 100,
+      "briefing": "Three container rows. Take the long way around each end.",
+      "route": [
+        {
+          "x": -15,
+          "z": -8,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 14,
+          "z": 7,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": -13,
+          "z": 21,
+          "gear": 0,
+          "radius": 2.7
+        }
+      ],
+      "barriers": [
+        {
+          "x": 7,
+          "z": -13,
+          "width": 2.44,
+          "length": 28,
+          "yaw": 90,
+          "kind": "container"
+        },
+        {
+          "x": -8,
+          "z": 3,
+          "width": 2.44,
+          "length": 28,
+          "yaw": 90,
+          "kind": "container"
+        },
+        {
+          "x": 6,
+          "z": 17,
+          "width": 2.44,
+          "length": 24,
+          "yaw": 90,
+          "kind": "container"
+        }
+      ],
+      "reversePark": false
+    },
+    {
+      "name": "Loading dock reverse",
+      "district": 2,
+      "difficulty": 4,
+      "spawnX": 16,
+      "spawnZ": -25,
+      "spawnYaw": 0,
+      "bayX": 7,
+      "bayZ": 15,
+      "bayYaw": 0,
+      "bayWidth": 2.8,
+      "bayLength": 5.7,
+      "mapWidth": 52,
+      "mapLength": 64,
+      "goldTime": 95,
+      "briefing": "Circle the freight stacks. Back between the dock dividers.",
+      "route": [
+        {
+          "x": 16,
+          "z": -9,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": -10,
+          "z": 4,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": -10,
+          "z": 21,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 7,
+          "z": 23,
+          "gear": -1,
+          "radius": 2,
+          "yaw": 0
+        }
+      ],
+      "barriers": [
+        {
+          "x": 4,
+          "z": -10,
+          "width": 2.44,
+          "length": 18,
+          "yaw": 90,
+          "kind": "container"
+        },
+        {
+          "x": 1,
+          "z": 7,
+          "width": 2.44,
+          "length": 12,
+          "yaw": 0,
+          "kind": "container"
+        },
+        {
+          "x": 4.95,
+          "z": 14,
+          "width": 0.4,
+          "length": 9,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 9.05,
+          "z": 14,
+          "width": 0.4,
+          "length": 9,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 7,
+          "z": 9,
+          "width": 4.5,
+          "length": 0.4,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": true
+    },
+    {
+      "name": "Container master",
+      "district": 2,
+      "difficulty": 4,
+      "spawnX": -17,
+      "spawnZ": -25,
+      "spawnYaw": 0,
+      "bayX": 10,
+      "bayZ": 25,
+      "bayYaw": -90,
+      "bayWidth": 2.7,
+      "bayLength": 5.5,
+      "mapWidth": 52,
+      "mapLength": 64,
+      "goldTime": 115,
+      "briefing": "Thread the terminal, then reverse into the tight final slot.",
+      "route": [
+        {
+          "x": -16,
+          "z": -8,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 14,
+          "z": 7,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": -13,
+          "z": 20,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 3,
+          "z": 25,
+          "gear": -1,
+          "radius": 1.8,
+          "yaw": -90
+        }
+      ],
+      "barriers": [
+        {
+          "x": 7,
+          "z": -13,
+          "width": 2.44,
+          "length": 28,
+          "yaw": 90,
+          "kind": "container"
+        },
+        {
+          "x": -8,
+          "z": 3,
+          "width": 2.44,
+          "length": 28,
+          "yaw": 90,
+          "kind": "container"
+        },
+        {
+          "x": 6,
+          "z": 16,
+          "width": 2.44,
+          "length": 24,
+          "yaw": 90,
+          "kind": "container"
+        },
+        {
+          "x": 10,
+          "z": 23.15,
+          "width": 8,
+          "length": 0.4,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 10,
+          "z": 26.85,
+          "width": 8,
+          "length": 0.4,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 14.5,
+          "z": 25,
+          "width": 0.4,
+          "length": 4.1,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": true
+    },
+    {
+      "name": "Ridge expedition",
+      "district": 3,
+      "difficulty": 4,
+      "spawnX": 0,
+      "spawnZ": -34,
+      "spawnYaw": 0,
+      "bayX": 5,
+      "bayZ": 32,
+      "bayYaw": 0,
+      "bayWidth": 2.65,
+      "bayLength": 5.5,
+      "mapWidth": 34,
+      "mapLength": 84,
+      "goldTime": 105,
+      "briefing": "A longer ridge route. Read each bend before accelerating.",
+      "route": [
+        {
+          "x": -7,
+          "z": -18,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 7,
+          "z": 1,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": -7,
+          "z": 17,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 5,
+          "z": 26,
+          "gear": 0,
+          "radius": 2.7
+        }
+      ],
+      "barriers": [
+        {
+          "x": 7,
+          "z": -22,
+          "width": 18,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -7,
+          "z": -6,
+          "width": 18,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 7,
+          "z": 10,
+          "width": 18,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -7,
+          "z": 23,
+          "width": 16,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": false
+    },
+    {
+      "name": "Outpost turnaround",
+      "district": 3,
+      "difficulty": 5,
+      "spawnX": -8,
+      "spawnZ": -33,
+      "spawnYaw": 0,
+      "bayX": -7,
+      "bayZ": 29,
+      "bayYaw": 90,
+      "bayWidth": 2.6,
+      "bayLength": 5.4,
+      "mapWidth": 34,
+      "mapLength": 84,
+      "goldTime": 110,
+      "briefing": "Go around the long wall. Turn, then reverse into the outpost.",
+      "route": [
+        {
+          "x": -8,
+          "z": -10,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 8,
+          "z": 15,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 8,
+          "z": 27,
+          "gear": 0,
+          "radius": 2.7
+        },
+        {
+          "x": 1,
+          "z": 29,
+          "gear": -1,
+          "radius": 1.8,
+          "yaw": 90
+        }
+      ],
+      "barriers": [
+        {
+          "x": 0,
+          "z": -12,
+          "width": 0.5,
+          "length": 38,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -7,
+          "z": 20,
+          "width": 12,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -7,
+          "z": 27.2,
+          "width": 8,
+          "length": 0.35,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -7,
+          "z": 30.8,
+          "width": 8,
+          "length": 0.35,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -11.5,
+          "z": 29,
+          "width": 0.35,
+          "length": 4,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": true
+    },
+    {
+      "name": "Ridge final exam",
+      "district": 3,
+      "difficulty": 5,
+      "spawnX": -8,
+      "spawnZ": -34,
+      "spawnYaw": 0,
+      "bayX": 0,
+      "bayZ": 34,
+      "bayYaw": 180,
+      "bayWidth": 2.55,
+      "bayLength": 5.3,
+      "mapWidth": 34,
+      "mapLength": 84,
+      "goldTime": 130,
+      "briefing": "Four narrow offsets. Reverse into the smallest final bay.",
+      "route": [
+        {
+          "x": -8,
+          "z": -18,
+          "gear": 0,
+          "radius": 2.2
+        },
+        {
+          "x": 8,
+          "z": -1,
+          "gear": 0,
+          "radius": 2.2
+        },
+        {
+          "x": -8,
+          "z": 15,
+          "gear": 0,
+          "radius": 2.2
+        },
+        {
+          "x": 8,
+          "z": 28,
+          "gear": 0,
+          "radius": 2.2
+        },
+        {
+          "x": 0,
+          "z": 29,
+          "gear": -1,
+          "radius": 1.8,
+          "yaw": 180
+        }
+      ],
+      "barriers": [
+        {
+          "x": 7,
+          "z": -22,
+          "width": 18,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -7,
+          "z": -6,
+          "width": 18,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 7,
+          "z": 10,
+          "width": 18,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -7,
+          "z": 23,
+          "width": 18,
+          "length": 0.45,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": -1.8,
+          "z": 34,
+          "width": 0.35,
+          "length": 6,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 1.8,
+          "z": 34,
+          "width": 0.35,
+          "length": 6,
+          "yaw": 0,
+          "kind": "concrete"
+        },
+        {
+          "x": 0,
+          "z": 37.5,
+          "width": 3.9,
+          "length": 0.35,
+          "yaw": 0,
+          "kind": "concrete"
+        }
+      ],
+      "reversePark": true
+    },
+    {
+      "name": "Steel snake",
+      "district": 2,
+      "difficulty": 5,
+      "mapWidth": 24,
+      "mapLength": 44,
+      "spawnX": -9,
+      "spawnZ": -18,
+      "spawnYaw": 0,
+      "bayX": 0,
+      "bayZ": 17,
+      "bayYaw": 0,
+      "bayWidth": 2.85,
+      "bayLength": 5.8,
+      "goldTime": 90,
+      "briefing": "Thread both container ends. Set up each turn before the nose reaches the stack.",
+      "reversePark": false,
+      "reverseOnly": false,
+      "route": [
+        {
+          "x": 9,
+          "z": -5,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.25,
+          "align": false
+        },
+        {
+          "x": -9,
+          "z": 9,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.25,
+          "align": false
+        },
+        {
+          "x": 0,
+          "z": 14,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.3,
+          "align": false
+        }
+      ],
+      "barriers": [
+        {
+          "x": -2.75,
+          "z": -8,
+          "width": 2.44,
+          "length": 18.5,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": 2.75,
+          "z": 6,
+          "width": 2.44,
+          "length": 18.5,
+          "kind": "container",
+          "yaw": 90
+        }
+      ],
+      "gates": []
+    },
+    {
+      "name": "Mirror alley",
+      "district": 2,
+      "difficulty": 5,
+      "mapWidth": 20,
+      "mapLength": 38,
+      "spawnX": 0,
+      "spawnZ": 14,
+      "spawnYaw": 0,
+      "bayX": 0,
+      "bayZ": -13,
+      "bayYaw": 0,
+      "bayWidth": 2.85,
+      "bayLength": 5.8,
+      "goldTime": 75,
+      "briefing": "REVERSE ONLY. Judge both mirrors and offset around the alley intrusions.",
+      "reversePark": true,
+      "reverseOnly": true,
+      "route": [
+        {
+          "x": 0,
+          "z": 7,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1,
+          "align": false
+        },
+        {
+          "x": 0.4,
+          "z": -1,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1,
+          "align": false
+        },
+        {
+          "x": -0.4,
+          "z": -8,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1,
+          "align": false
+        }
+      ],
+      "barriers": [
+        {
+          "x": -2,
+          "z": 0,
+          "width": 0.45,
+          "length": 26,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 2,
+          "z": 0,
+          "width": 0.45,
+          "length": 26,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": -1.5,
+          "z": -2,
+          "width": 1,
+          "length": 2,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 1.5,
+          "z": -8,
+          "width": 1,
+          "length": 2,
+          "kind": "concrete",
+          "yaw": 0
+        }
+      ],
+      "gates": []
+    },
+    {
+      "name": "Three point escape",
+      "district": 2,
+      "difficulty": 5,
+      "mapWidth": 20,
+      "mapLength": 32,
+      "spawnX": 0,
+      "spawnZ": -12,
+      "spawnYaw": 0,
+      "bayX": 0,
+      "bayZ": -12,
+      "bayYaw": 0,
+      "bayWidth": 2.85,
+      "bayLength": 5.8,
+      "goldTime": 80,
+      "briefing": "Dead end. Pull right, reverse across the pocket, then drive out facing the exit.",
+      "reversePark": false,
+      "reverseOnly": false,
+      "route": [
+        {
+          "x": 2,
+          "z": 6.6,
+          "gear": 1,
+          "yaw": 60,
+          "radius": 1,
+          "align": true
+        },
+        {
+          "x": -3.2,
+          "z": 8.1,
+          "gear": -1,
+          "yaw": 150,
+          "radius": 0.95,
+          "align": true
+        },
+        {
+          "x": 0,
+          "z": 1,
+          "gear": 1,
+          "yaw": 180,
+          "radius": 1.2,
+          "align": true
+        }
+      ],
+      "barriers": [
+        {
+          "x": -6.25,
+          "z": -5,
+          "width": 7.5,
+          "length": 20,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 6.25,
+          "z": -5,
+          "width": 7.5,
+          "length": 20,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": -8,
+          "z": 10.5,
+          "width": 4,
+          "length": 11,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 8,
+          "z": 10.5,
+          "width": 4,
+          "length": 11,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 0,
+          "z": 13.5,
+          "width": 20,
+          "length": 5,
+          "kind": "concrete",
+          "yaw": 0
+        }
+      ],
+      "gates": []
+    },
+    {
+      "name": "Red light precision",
+      "district": 2,
+      "difficulty": 5,
+      "mapWidth": 24,
+      "mapLength": 44,
+      "spawnX": 0,
+      "spawnZ": -18,
+      "spawnYaw": 0,
+      "bayX": 6,
+      "bayZ": 17,
+      "bayYaw": 0,
+      "bayWidth": 2.85,
+      "bayLength": 5.8,
+      "goldTime": 85,
+      "briefing": "Stop before red. Cross on green, then line up for the offset 3.5 m opening.",
+      "reversePark": false,
+      "reverseOnly": false,
+      "route": [
+        {
+          "x": 0,
+          "z": -10,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.4,
+          "align": false
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.3,
+          "align": false
+        },
+        {
+          "x": 6,
+          "z": 10,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.2,
+          "align": false
+        }
+      ],
+      "barriers": [
+        {
+          "x": -7.1,
+          "z": -5,
+          "width": 9.8,
+          "length": 1,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 7.1,
+          "z": -5,
+          "width": 9.8,
+          "length": 1,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": -2.3,
+          "z": -5,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": 2.3,
+          "z": -5,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": -3.875,
+          "z": 6,
+          "width": 16.25,
+          "length": 0.5,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 9.875,
+          "z": 6,
+          "width": 4.25,
+          "length": 0.5,
+          "kind": "concrete",
+          "yaw": 0
+        }
+      ],
+      "gates": [
+        {
+          "x": 0,
+          "z": -5,
+          "width": 4.2,
+          "closedSeconds": 4,
+          "openSeconds": 5
+        }
+      ]
+    },
+    {
+      "name": "Backwards dogleg",
+      "district": 3,
+      "difficulty": 5,
+      "mapWidth": 24,
+      "mapLength": 48,
+      "spawnX": -9,
+      "spawnZ": 19,
+      "spawnYaw": 0,
+      "bayX": 0,
+      "bayZ": -19,
+      "bayYaw": 0,
+      "bayWidth": 2.85,
+      "bayLength": 5.8,
+      "goldTime": 120,
+      "briefing": "REVERSE ONLY. Two opposite offsets. Use small steering inputs and clear the rear corner.",
+      "reversePark": true,
+      "reverseOnly": true,
+      "route": [
+        {
+          "x": -9,
+          "z": 10,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1.2,
+          "align": false
+        },
+        {
+          "x": 9,
+          "z": -10,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1.2,
+          "align": false
+        },
+        {
+          "x": 0,
+          "z": -16,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1.2,
+          "align": false
+        }
+      ],
+      "barriers": [
+        {
+          "x": -2.75,
+          "z": -7,
+          "width": 2.44,
+          "length": 18.5,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": 2.75,
+          "z": 7,
+          "width": 2.44,
+          "length": 18.5,
+          "kind": "container",
+          "yaw": 90
+        }
+      ],
+      "gates": []
+    },
+    {
+      "name": "Freight master exam",
+      "district": 3,
+      "difficulty": 5,
+      "mapWidth": 28,
+      "mapLength": 56,
+      "spawnX": -9,
+      "spawnZ": -23,
+      "spawnYaw": 0,
+      "bayX": 8,
+      "bayZ": 15,
+      "bayYaw": 0,
+      "bayWidth": 2.85,
+      "bayLength": 5.8,
+      "goldTime": 150,
+      "briefing": "Combine the snake, green-signal crossing and a deliberate setup before the final reverse dock.",
+      "reversePark": true,
+      "reverseOnly": false,
+      "route": [
+        {
+          "x": 10.5,
+          "z": -7,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.3,
+          "align": false
+        },
+        {
+          "x": -10.5,
+          "z": 8,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.3,
+          "align": false
+        },
+        {
+          "x": 8,
+          "z": 23,
+          "gear": 1,
+          "yaw": 0,
+          "radius": 1.2,
+          "align": true
+        },
+        {
+          "x": 8,
+          "z": 20,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1.1,
+          "align": false
+        }
+      ],
+      "barriers": [
+        {
+          "x": -3.25,
+          "z": -10,
+          "width": 2.44,
+          "length": 21.5,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": 3.25,
+          "z": 3,
+          "width": 2.44,
+          "length": 21.5,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": -13.7,
+          "z": 3,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": -7.3,
+          "z": 3,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": 6.3,
+          "z": 15,
+          "width": 0.35,
+          "length": 7,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 9.7,
+          "z": 15,
+          "width": 0.35,
+          "length": 7,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 8,
+          "z": 11,
+          "width": 3.75,
+          "length": 0.35,
+          "kind": "concrete",
+          "yaw": 0
+        }
+      ],
+      "gates": [
+        {
+          "x": -10.5,
+          "z": 3,
+          "width": 6,
+          "closedSeconds": 4,
+          "openSeconds": 6
+        }
+      ]
+    },
+    {
+      "name": "Century sprint",
+      "district": 4,
+      "difficulty": 5,
+      "mapWidth": 28,
+      "mapLength": 700,
+      "spawnX": 0,
+      "spawnZ": -315,
+      "spawnYaw": 0,
+      "bayX": 0,
+      "bayZ": 280,
+      "bayYaw": 0,
+      "bayWidth": 2.7,
+      "bayLength": 5.8,
+      "goldTime": 50,
+      "briefing": "Build up to 100 km/h. Cross the 90+ speed sensor, then brake early and park precisely.",
+      "route": [
+        {
+          "x": 0,
+          "z": -180,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 8,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 0,
+          "z": -30,
+          "gear": 1,
+          "yaw": 0,
+          "radius": 5,
+          "align": false,
+          "minKph": 90
+        },
+        {
+          "x": 0,
+          "z": 160,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 8,
+          "align": false,
+          "minKph": 0
+        }
+      ],
+      "barriers": [
+        {
+          "x": -10,
+          "z": -5,
+          "width": 0.4,
+          "length": 660,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 10,
+          "z": -5,
+          "width": 0.4,
+          "length": 660,
+          "kind": "concrete",
+          "yaw": 0
+        }
+      ],
+      "reversePark": false,
+      "reverseOnly": false,
+      "gates": []
+    },
+    {
+      "name": "Twin signal gauntlet",
+      "district": 1,
+      "difficulty": 5,
+      "mapWidth": 44,
+      "mapLength": 84,
+      "spawnX": -8,
+      "spawnZ": -34,
+      "spawnYaw": 0,
+      "bayX": 8,
+      "bayZ": 24,
+      "bayYaw": 0,
+      "bayWidth": 2.7,
+      "bayLength": 5.8,
+      "goldTime": 140,
+      "briefing": "Read two independent green windows. Change lanes between gates, then reverse into the service pocket.",
+      "route": [
+        {
+          "x": -8,
+          "z": -22,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.4,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": -8,
+          "z": -6,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.4,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 8,
+          "z": 5,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.4,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 8,
+          "z": 17,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.4,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 8,
+          "z": 32,
+          "gear": 1,
+          "yaw": 0,
+          "radius": 1.2,
+          "align": true,
+          "minKph": 0
+        },
+        {
+          "x": 8,
+          "z": 28,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1.2,
+          "align": false,
+          "minKph": 0
+        }
+      ],
+      "barriers": [
+        {
+          "x": -16.3,
+          "z": -14,
+          "width": 11.4,
+          "length": 0.55,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 8.3,
+          "z": -14,
+          "width": 27.4,
+          "length": 0.55,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": -10.4,
+          "z": -14,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": -5.6,
+          "z": -14,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": -8.3,
+          "z": 12,
+          "width": 27.4,
+          "length": 0.55,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 16.3,
+          "z": 12,
+          "width": 11.4,
+          "length": 0.55,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 5.6,
+          "z": 12,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": 10.4,
+          "z": 12,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": 6.2,
+          "z": 24,
+          "width": 0.35,
+          "length": 7,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 9.8,
+          "z": 24,
+          "width": 0.35,
+          "length": 7,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 8,
+          "z": 20,
+          "width": 4.2,
+          "length": 0.35,
+          "kind": "concrete",
+          "yaw": 0
+        }
+      ],
+      "reversePark": true,
+      "reverseOnly": false,
+      "gates": [
+        {
+          "x": -8,
+          "z": -14,
+          "width": 4.4,
+          "closedSeconds": 3,
+          "openSeconds": 4.5
+        },
+        {
+          "x": 8,
+          "z": 12,
+          "width": 4.4,
+          "closedSeconds": 6,
+          "openSeconds": 4.5
+        }
+      ]
+    },
+    {
+      "name": "Harbour switchback",
+      "district": 2,
+      "difficulty": 5,
+      "mapWidth": 34,
+      "mapLength": 68,
+      "spawnX": -12,
+      "spawnZ": -29,
+      "spawnYaw": 0,
+      "bayX": -9,
+      "bayZ": 25,
+      "bayYaw": 90,
+      "bayWidth": 2.7,
+      "bayLength": 5.8,
+      "goldTime": 170,
+      "briefing": "Three container ends, then a blind-side reverse parallel dock. Leave room for the rear corner.",
+      "route": [
+        {
+          "x": 14,
+          "z": -12,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.5,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": -14,
+          "z": 4,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.5,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 14,
+          "z": 20,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.5,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 2,
+          "z": 25,
+          "gear": 1,
+          "yaw": 90,
+          "radius": 1.4,
+          "align": true,
+          "minKph": 0
+        },
+        {
+          "x": -4,
+          "z": 25,
+          "gear": -1,
+          "yaw": 90,
+          "radius": 1.2,
+          "align": false,
+          "minKph": 0
+        }
+      ],
+      "barriers": [
+        {
+          "x": -2.5,
+          "z": -16,
+          "width": 2.44,
+          "length": 27,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": 2.5,
+          "z": 0,
+          "width": 2.44,
+          "length": 27,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": -2.5,
+          "z": 16,
+          "width": 2.44,
+          "length": 27,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": -9,
+          "z": 23.3,
+          "width": 8,
+          "length": 0.35,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": -9,
+          "z": 26.7,
+          "width": 8,
+          "length": 0.35,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": -13.4,
+          "z": 25,
+          "width": 0.35,
+          "length": 3.8,
+          "kind": "concrete",
+          "yaw": 0
+        }
+      ],
+      "reversePark": true,
+      "reverseOnly": false,
+      "gates": []
+    },
+    {
+      "name": "Courtyard parallel",
+      "district": 0,
+      "difficulty": 5,
+      "mapWidth": 32,
+      "mapLength": 48,
+      "spawnX": -10,
+      "spawnZ": -18,
+      "spawnYaw": 0,
+      "bayX": 5.5,
+      "bayZ": 5,
+      "bayYaw": 90,
+      "bayWidth": 2.7,
+      "bayLength": 5.8,
+      "goldTime": 110,
+      "briefing": "Take the outside approach, point the nose east and reverse between the concrete pocket walls.",
+      "route": [
+        {
+          "x": 12,
+          "z": -4,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 2,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 12,
+          "z": 5,
+          "gear": 1,
+          "yaw": 90,
+          "radius": 1.3,
+          "align": true,
+          "minKph": 0
+        },
+        {
+          "x": 8.5,
+          "z": 5,
+          "gear": -1,
+          "yaw": 90,
+          "radius": 1.1,
+          "align": false,
+          "minKph": 0
+        }
+      ],
+      "barriers": [
+        {
+          "x": 5,
+          "z": 3.3,
+          "width": 7,
+          "length": 0.35,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 5,
+          "z": 6.7,
+          "width": 7,
+          "length": 0.35,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 1.8,
+          "z": 5,
+          "width": 0.35,
+          "length": 3.8,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": -4,
+          "z": -3,
+          "width": 5,
+          "length": 10,
+          "kind": "crate",
+          "yaw": 0
+        }
+      ],
+      "reversePark": true,
+      "reverseOnly": false,
+      "gates": []
+    },
+    {
+      "name": "Reverse horseshoe",
+      "district": 1,
+      "difficulty": 5,
+      "mapWidth": 36,
+      "mapLength": 76,
+      "spawnX": -12,
+      "spawnZ": 30,
+      "spawnYaw": 0,
+      "bayX": 12,
+      "bayZ": 30,
+      "bayYaw": 180,
+      "bayWidth": 2.7,
+      "bayLength": 5.8,
+      "goldTime": 190,
+      "briefing": "REVERSE ONLY. Back around the warehouse, turn through the horseshoe and finish facing the way you came.",
+      "route": [
+        {
+          "x": -12,
+          "z": -21,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1.4,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 0,
+          "z": -31,
+          "gear": -1,
+          "yaw": 270,
+          "radius": 1.5,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 12,
+          "z": -21,
+          "gear": -1,
+          "yaw": 180,
+          "radius": 1.4,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 12,
+          "z": 22,
+          "gear": -1,
+          "yaw": 180,
+          "radius": 1.4,
+          "align": false,
+          "minKph": 0
+        }
+      ],
+      "barriers": [
+        {
+          "x": 0,
+          "z": 0,
+          "width": 12,
+          "length": 42,
+          "kind": "warehouse",
+          "yaw": 0
+        }
+      ],
+      "reversePark": true,
+      "reverseOnly": true,
+      "gates": []
+    },
+    {
+      "name": "Precision endurance",
+      "district": 3,
+      "difficulty": 5,
+      "mapWidth": 40,
+      "mapLength": 120,
+      "spawnX": -13,
+      "spawnZ": -52,
+      "spawnYaw": 0,
+      "bayX": 0,
+      "bayZ": 46,
+      "bayYaw": 0,
+      "bayWidth": 2.7,
+      "bayLength": 5.8,
+      "goldTime": 190,
+      "briefing": "Three alternating offsets, two independent signals and one final reverse pocket. One contact ends the run.",
+      "route": [
+        {
+          "x": 16,
+          "z": -24,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.6,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": -16,
+          "z": 0,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.6,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 16,
+          "z": 24,
+          "gear": 0,
+          "yaw": 0,
+          "radius": 1.6,
+          "align": false,
+          "minKph": 0
+        },
+        {
+          "x": 0,
+          "z": 54,
+          "gear": 1,
+          "yaw": 0,
+          "radius": 1.3,
+          "align": true,
+          "minKph": 0
+        },
+        {
+          "x": 0,
+          "z": 51,
+          "gear": -1,
+          "yaw": 0,
+          "radius": 1.2,
+          "align": false,
+          "minKph": 0
+        }
+      ],
+      "barriers": [
+        {
+          "x": -3,
+          "z": -30,
+          "width": 2.44,
+          "length": 30,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": 3,
+          "z": -6,
+          "width": 2.44,
+          "length": 30,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": -3,
+          "z": 18,
+          "width": 2.44,
+          "length": 30,
+          "kind": "container",
+          "yaw": 90
+        },
+        {
+          "x": -19.2,
+          "z": -6,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": -12.8,
+          "z": -6,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": 12.8,
+          "z": 18,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": 19.2,
+          "z": 18,
+          "width": 0.35,
+          "length": 0.6,
+          "kind": "post",
+          "yaw": 0
+        },
+        {
+          "x": -1.7,
+          "z": 46,
+          "width": 0.35,
+          "length": 8,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 1.7,
+          "z": 46,
+          "width": 0.35,
+          "length": 8,
+          "kind": "concrete",
+          "yaw": 0
+        },
+        {
+          "x": 0,
+          "z": 41.5,
+          "width": 3.75,
+          "length": 0.35,
+          "kind": "concrete",
+          "yaw": 0
+        }
+      ],
+      "reversePark": true,
+      "reverseOnly": false,
+      "gates": [
+        {
+          "x": -16,
+          "z": -6,
+          "width": 6,
+          "closedSeconds": 3.5,
+          "openSeconds": 5
+        },
+        {
+          "x": 16,
+          "z": 18,
+          "width": 6,
+          "closedSeconds": 5,
+          "openSeconds": 5
+        }
+      ]
+    }
+  ]
+}
