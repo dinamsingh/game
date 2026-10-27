@@ -140,7 +140,10 @@ namespace RoxxParking
             rb.mass = 1850; rb.linearDamping = 0.08f; rb.angularDamping = 1.8f;
             rb.interpolation = RigidbodyInterpolation.Interpolate;
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-            rb.centerOfMass = new Vector3(0, 0.24f, 0.1f);
+            // Lowered from 0.24 m: a tall SUV with a high centre of mass rolls
+            // far more easily on a fast turn. 0.10 m keeps it above the axles
+            // while raising the rollover threshold noticeably.
+            rb.centerOfMass = new Vector3(0, 0.10f, 0.1f);
             BoxCollider chassis = car.AddComponent<BoxCollider>();
             chassis.center = new Vector3(0, 0.53f, 0); chassis.size = new Vector3(1.88f, 1.05f, 4.28f);
             GameObject supplied = Resources.Load<GameObject>("Thar/TharRoxx");
@@ -235,7 +238,9 @@ namespace RoxxParking
             wc.mass = 28; wc.suspensionDistance = 0.2f; wc.wheelDampingRate = 0.6f;
             JointSpring spring = wc.suspensionSpring; spring.spring = 42000; spring.damper = 5200; spring.targetPosition = 0.5f;
             wc.suspensionSpring = spring;
-            WheelFrictionCurve friction = wc.sidewaysFriction; friction.stiffness = 1.8f; wc.sidewaysFriction = friction;
+            // Reduced from 1.8: over-grippy sideways tyres used to trip the car
+            // into a roll on a fast turn instead of letting it slide a little.
+            WheelFrictionCurve friction = wc.sidewaysFriction; friction.stiffness = 1.35f; wc.sidewaysFriction = friction;
             wc.ConfigureVehicleSubsteps(5, 5, 8);
             return wc;
         }

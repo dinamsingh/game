@@ -165,9 +165,26 @@ namespace RoxxParking
             }
             Vector3 local = bay.InverseTransformPoint(Car.transform.position);
             float angle = Mathf.DeltaAngle(bay.eulerAngles.y, Car.transform.eulerAngles.y);
-            bool fits = RouteIndex == RouteCount && (!course.reversePark || (Car.Gear == -1 && Mathf.Abs(angle) <= ParkingRules.MaximumAngle))
+            // Wheels-inside-bay rule: all four wheels inside the bay at once,
+            // while stopped, completes the park after the 1.6 s hold below.
+            // No perfect-alignment heading is required for a normal bay. For a
+            // reverse bay the car must still be in R and roughly facing the bay
+            // direction (30 deg, not the old 12 deg), otherwise driving in
+            // forward and switching to R at the end would also win.
+            float[] wheelX = null, wheelZ = null;
+            if (Car.wheels != null && Car.wheels.Length >= 4)
+            {
+                wheelX = new float[Car.wheels.Length]; wheelZ = new float[Car.wheels.Length];
+                for (int i = 0; i < Car.wheels.Length; i++)
+                {
+                    Vector3 wheelLocal = bay.InverseTransformPoint(Car.wheels[i].transform.position);
+                    wheelX[i] = wheelLocal.x; wheelZ[i] = wheelLocal.z;
+                }
+            }
+            bool fits = RouteIndex == RouteCount
+                && (!course.reversePark || (Car.Gear == -1 && Mathf.Abs(angle) <= ParkingRules.ReverseBayHeadingTolerance))
                 && Mathf.Abs(local.y) < 2 && Vector3.Dot(Car.transform.up, Vector3.up) > 0.95f
-                && ParkingRules.Fits(local.x, local.z, angle, course.bayWidth, course.bayLength, Car.Speed);
+                && ParkingRules.WheelsInsideBay(wheelX, wheelZ, course.bayWidth, course.bayLength, Car.Speed);
             parkingHold = ParkingRules.Accumulate(parkingHold, fits, Time.fixedDeltaTime);
             if (parkingHold < ParkingRules.HoldSeconds) return;
             state = GameState.Won; Car.SetDriving(false); ClearInput();

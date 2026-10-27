@@ -78,6 +78,32 @@ namespace RoxxParking
                 && Math.Abs(localZ) + extentZ <= bayLength * 0.5;
         }
 
+        // New parking rule: mission completes when all four wheels are inside
+        // the bay at the same time, while the car is effectively stopped. This
+        // replaces the old "perfect alignment" rule for the final park: Fits()
+        // above required the whole rotated body inside the bay and a heading
+        // within 12 degrees. WheelsInsideBay has no heading check of its own;
+        // RoxxGame still applies a heading tolerance for reverse bays (see
+        // ReverseBayHeadingTolerance), because without it a car driven forward
+        // into the bay and then switched to R would also win a reverse park.
+        // Speed is still capped so driving through the bay cannot win: the
+        // 1.6 s hold in RoxxGame only accumulates while this stays true.
+        public const float ReverseBayHeadingTolerance = 30f;
+
+        public static bool WheelsInsideBay(float[] wheelX, float[] wheelZ, float bayWidth, float bayLength, float speed)
+        {
+            if (wheelX == null || wheelZ == null || wheelX.Length != wheelZ.Length || wheelX.Length < 4
+                || !Finite(speed) || Math.Abs(speed) > MaximumSpeed
+                || !Finite(bayWidth) || !Finite(bayLength) || bayWidth <= 0 || bayLength <= 0)
+                return false;
+            for (int i = 0; i < wheelX.Length; i++)
+            {
+                if (!Finite(wheelX[i]) || !Finite(wheelZ[i])) return false;
+                if (Math.Abs(wheelX[i]) > bayWidth * 0.5 || Math.Abs(wheelZ[i]) > bayLength * 0.5) return false;
+            }
+            return true;
+        }
+
         public static float Accumulate(float current, bool eligible, float deltaTime)
         {
             if (!eligible || !Finite(current) || !Finite(deltaTime) || deltaTime < 0) return 0;

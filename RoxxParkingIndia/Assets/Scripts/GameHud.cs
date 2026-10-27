@@ -27,6 +27,10 @@ namespace RoxxParking
         private int coursePage;
         private readonly Color ink = new Color(0.055f, 0.09f, 0.11f, 0.97f);
         private readonly Color white = new Color(0.94f, 0.95f, 0.9f);
+        // v3 HUD: brake must be instantly distinguishable from the accelerator,
+        // so it is red (not the old near-black ink) and at least as large as ACCEL.
+        private readonly Color brakeRed = new Color(0.83f, 0.15f, 0.13f, 0.97f);
+        private readonly Color wheelDark = new Color(0.10f, 0.11f, 0.12f, 0.97f);
         private Rect lastSafe;
 
         public GameHud(RoxxGame owner)
@@ -39,44 +43,45 @@ namespace RoxxParking
             scaler.referenceResolution = new Vector2(1600, 900); scaler.matchWidthOrHeight = 0.5f;
             safe = Rect("Safe area", root.transform); Stretch(safe);
             driving = Rect("Driving HUD", safe).gameObject; Stretch((RectTransform)driving.transform);
-            RectTransform info = Panel("Level info", driving.transform, new Vector2(0, 1), new Vector2(305, -85), new Vector2(560, 132), ink);
-            level = Label(info, "01 / THE FIRST PARK", 23, new Vector2(0, 39), new Vector2(520, 34), TextAnchor.MiddleLeft);
-            hint = Label(info, "Park fully inside the green bay", 17, new Vector2(0, 2), new Vector2(520, 34), TextAnchor.MiddleLeft);
-            objective = Label(info, "", 15, new Vector2(0,-38),new Vector2(520,32),TextAnchor.MiddleLeft);
+            RectTransform info = Panel("Level info", driving.transform, new Vector2(0, 1), new Vector2(330, -90), new Vector2(620, 150), ink);
+            level = Label(info, "01 / THE FIRST PARK", 25, new Vector2(0, 44), new Vector2(580, 36), TextAnchor.MiddleLeft);
+            hint = Label(info, "Park fully inside the green bay", 18, new Vector2(0, 0), new Vector2(580, 36), TextAnchor.MiddleLeft);
+            objective = Label(info, "", 16, new Vector2(0,-44),new Vector2(580,34),TextAnchor.MiddleLeft);
             objective.color=WorldBuilder.Saffron;
-            RectTransform navigation=Panel("Navigation",driving.transform,new Vector2(.5f,1),new Vector2(35,-67),new Vector2(270,96),ink);
+            RectTransform navigation=Panel("Navigation",driving.transform,new Vector2(.5f,1),new Vector2(35,-70),new Vector2(300,104),ink);
             compass=Label(navigation,"^",38,new Vector2(-90,6),new Vector2(55,65)).rectTransform;
-            timer=Label(navigation,"00:00",21,new Vector2(32,4),new Vector2(170,70));
-            Button("Pause", driving.transform, new Vector2(1, 1), new Vector2(-87, -49), new Vector2(126, 54), "PAUSE", () => game.Pause());
-            Button("View", driving.transform, new Vector2(1, 1), new Vector2(-226, -49), new Vector2(126, 54), "CAMERA", () => game.ResetCamera());
-            mode = Button("Input mode", driving.transform, new Vector2(0, 1), new Vector2(106, -182), new Vector2(164, 43), "USE BUTTONS", () => game.ToggleInputMode()).GetComponentInChildren<Text>();
-            RectTransform meter = Panel("Speed", driving.transform, new Vector2(1, 0), new Vector2(-115, 327), new Vector2(176, 88), ink);
-            speed = Label(meter, "00", 43, new Vector2(-22, 4), new Vector2(110, 60));
-            Label(meter, "km/h", 15, new Vector2(51, -6), new Vector2(62, 35));
-            gear = Button("Gear", driving.transform, new Vector2(1, 0), new Vector2(-115, 251), new Vector2(176, 50), "D  /  R", () => game.ToggleGear()).GetComponentInChildren<Text>();
-            accelerator = Hold("Accelerator", new Vector2(-97, 111), new Vector2(135, 185), "ACCEL", WorldBuilder.Saffron, v => game.ThrottleHeld = v);
-            brake = Hold("Brake", new Vector2(-254, 90), new Vector2(130, 143), "BRAKE", ink, v => game.BrakeHeld = v);
+            timer=Label(navigation,"00:00",22,new Vector2(35,4),new Vector2(180,72));
+            Button("Pause", driving.transform, new Vector2(1, 1), new Vector2(-95, -52), new Vector2(150, 60), "PAUSE", () => game.Pause());
+            Button("View", driving.transform, new Vector2(1, 1), new Vector2(-260, -52), new Vector2(150, 60), "CAMERA", () => game.ResetCamera());
+            mode = Button("Input mode", driving.transform, new Vector2(0, 1), new Vector2(120, -195), new Vector2(200, 48), "USE BUTTONS", () => game.ToggleInputMode()).GetComponentInChildren<Text>();
+            RectTransform meter = Panel("Speed", driving.transform, new Vector2(1, 0), new Vector2(-125, 348), new Vector2(210, 100), ink);
+            speed = Label(meter, "00", 48, new Vector2(-28, 4), new Vector2(120, 64));
+            Label(meter, "km/h", 16, new Vector2(62, -8), new Vector2(68, 38));
+            gear = Button("Gear", driving.transform, new Vector2(1, 0), new Vector2(-125, 265), new Vector2(210, 54), "D  /  R", () => game.ToggleGear()).GetComponentInChildren<Text>();
+            gear.fontSize = 22;
+            accelerator = Hold("Accelerator", new Vector2(-100, 112), new Vector2(175, 220), "ACCEL", WorldBuilder.Saffron, v => game.ThrottleHeld = v);
+            brake = Hold("Brake", new Vector2(-285, 112), new Vector2(175, 220), "BRAKE", brakeRed, v => game.BrakeHeld = v);
             wheelRoot = Rect("Steering wheel", driving.transform).gameObject;
-            wheel = (RectTransform)wheelRoot.transform; Place(wheel, new Vector2(0, 0), new Vector2(194, 190), new Vector2(300, 300));
-            Image ring = wheelRoot.AddComponent<Image>(); ring.sprite = Ring(); ring.color = white;
-            RectTransform hub = Panel("Hub", wheel, Vector2.one * 0.5f, Vector2.zero, new Vector2(70, 70), ink);
+            wheel = (RectTransform)wheelRoot.transform; Place(wheel, new Vector2(0, 0), new Vector2(220, 200), new Vector2(380, 380));
+            Image ring = wheelRoot.AddComponent<Image>(); ring.sprite = Ring(); ring.color = wheelDark;
+            RectTransform hub = Panel("Hub", wheel, Vector2.one * 0.5f, Vector2.zero, new Vector2(100, 100), ink);
             for (int i = 0; i < 3; i++)
             {
-                RectTransform spoke = Panel("Spoke", wheel, Vector2.one * 0.5f, Vector2.zero, new Vector2(17, 125), white);
+                RectTransform spoke = Panel("Spoke", wheel, Vector2.one * 0.5f, Vector2.zero, new Vector2(24, 160), white);
                 spoke.pivot = new Vector2(0.5f, 0); spoke.anchoredPosition = Vector2.zero; spoke.localEulerAngles = new Vector3(0, 0, i * 120);
                 spoke.GetComponent<Image>().raycastTarget = false;
             }
-            hub.SetAsLastSibling(); Label(hub, "R", 29, Vector2.zero, new Vector2(65, 65));
+            hub.SetAsLastSibling(); Text hubLabel = Label(hub, "R", 38, Vector2.zero, new Vector2(90, 90)); hubLabel.color = WorldBuilder.Saffron;
             wheelRoot.AddComponent<SteeringControl>().Changed = v => game.WheelInput = v;
             arrows = Rect("Arrow controls", driving.transform).gameObject; Stretch((RectTransform)arrows.transform);
-            leftArrow = Arrow("Left", new Vector2(100, 125), "<", v => game.LeftHeld = v);
-            rightArrow = Arrow("Right", new Vector2(270, 125), ">", v => game.RightHeld = v);
+            leftArrow = Arrow("Left", new Vector2(105, 125), "<", v => game.LeftHeld = v);
+            rightArrow = Arrow("Right", new Vector2(285, 125), ">", v => game.RightHeld = v);
             arrows.SetActive(false);
-            RectTransform progressTrack = Panel("Parking hold track", driving.transform, new Vector2(0.5f, 0), new Vector2(0, 91), new Vector2(350, 12), ink);
-            RectTransform fill = Panel("Parking hold", progressTrack, new Vector2(0, 0.5f), Vector2.zero, new Vector2(350, 12), WorldBuilder.Emerald);
+            RectTransform progressTrack = Panel("Parking hold track", driving.transform, new Vector2(0.5f, 0), new Vector2(0, 95), new Vector2(420, 16), ink);
+            RectTransform fill = Panel("Parking hold", progressTrack, new Vector2(0, 0.5f), Vector2.zero, new Vector2(420, 16), WorldBuilder.Emerald);
             fill.pivot = new Vector2(0, 0.5f); fill.anchoredPosition = Vector2.zero;
             progress = fill.GetComponent<Image>();
-            Label(driving.transform, "ALIGN  /  BRAKE  /  HOLD", 16, new Vector2(0, 118), new Vector2(360, 30), TextAnchor.MiddleCenter, new Vector2(0.5f, 0));
+            Label(driving.transform, "ALIGN  /  BRAKE  /  HOLD", 18, new Vector2(0, 124), new Vector2(440, 32), TextAnchor.MiddleCenter, new Vector2(0.5f, 0));
             overlay = Panel("Menu shade", safe, Vector2.one * 0.5f, Vector2.zero, Vector2.zero, new Color(0.02f, 0.06f, 0.06f, 0.48f)).gameObject;
             Stretch((RectTransform)overlay.transform);
             card = Panel("Menu card", overlay.transform, Vector2.one * 0.5f, Vector2.zero, new Vector2(640, 650), ink);
@@ -90,13 +95,13 @@ namespace RoxxParking
             wheelRoot.SetActive(false);arrows.SetActive(false);
             bool right=game.SteeringOnRight;
             Vector2 steerAnchor=new Vector2(right?1:0,0),pedalAnchor=new Vector2(right?0:1,0);
-            Place(wheel,steerAnchor,new Vector2(right?-194:194,190),new Vector2(300,300));
-            Place(leftArrow,steerAnchor,new Vector2(right?-270:100,125),new Vector2(145,155));
-            Place(rightArrow,steerAnchor,new Vector2(right?-100:270,125),new Vector2(145,155));
-            Place(accelerator,pedalAnchor,new Vector2(right?97:-97,111),accelerator.sizeDelta);
-            Place(brake,pedalAnchor,new Vector2(right?254:-254,90),brake.sizeDelta);
-            Place((RectTransform)speed.transform.parent,pedalAnchor,new Vector2(right?115:-115,327),new Vector2(176,88));
-            Place((RectTransform)gear.transform.parent,pedalAnchor,new Vector2(right?115:-115,251),new Vector2(176,50));
+            Place(wheel,steerAnchor,new Vector2(right?-220:220,200),new Vector2(380,380));
+            Place(leftArrow,steerAnchor,new Vector2(right?-285:105,125),new Vector2(175,185));
+            Place(rightArrow,steerAnchor,new Vector2(right?-105:285,125),new Vector2(175,185));
+            Place(accelerator,pedalAnchor,new Vector2(right?100:-100,112),accelerator.sizeDelta);
+            Place(brake,pedalAnchor,new Vector2(right?285:-285,112),brake.sizeDelta);
+            Place((RectTransform)speed.transform.parent,pedalAnchor,new Vector2(right?125:-125,348),new Vector2(210,100));
+            Place((RectTransform)gear.transform.parent,pedalAnchor,new Vector2(right?125:-125,265),new Vector2(210,54));
             wheelRoot.SetActive(wheelMode);arrows.SetActive(!wheelMode);
         }
 
@@ -105,7 +110,7 @@ namespace RoxxParking
             if (lastSafe != Screen.safeArea) ApplySafeArea();
             if (!driving.activeSelf) return;
             speed.text = (game.Car.Speed * 3.6f).ToString("00");
-            progress.rectTransform.sizeDelta = new Vector2(350 * game.ParkingProgress, 12);
+            progress.rectTransform.sizeDelta = new Vector2(420 * game.ParkingProgress, 16);
             wheel.localRotation = Quaternion.Euler(0, 0, -game.Car.Steering * 125);
             gear.text = game.CurrentCourse.reverseOnly ? "R / REVERSE ONLY" : game.Car.Gear > 0 ? "[ D ]     R" : "D     [ R ]";
             string signal=game.GateHint;
@@ -128,7 +133,7 @@ namespace RoxxParking
         {
             overlay.SetActive(false); driving.SetActive(true);
             level.text = (index + 1).ToString("00") + " / " + name.ToUpperInvariant();
-            progress.rectTransform.sizeDelta = new Vector2(0, 12);
+            progress.rectTransform.sizeDelta = new Vector2(0, 16);
         }
 
         public void ShowMenu()
@@ -216,7 +221,7 @@ namespace RoxxParking
             Label(card,"SLOW / 25%                                  FAST / 200%",15,new Vector2(0,12),new Vector2(510,35));
             Button side=Button("Steering side",card,Vector2.one*.5f,new Vector2(0,-75),new Vector2(500,64),game.SteeringOnRight?"STEERING / RIGHT":"STEERING / LEFT",null);
             side.onClick.AddListener(()=>{game.SetSteeringSide(!game.SteeringOnRight);side.GetComponentInChildren<Text>().text=game.SteeringOnRight?"STEERING / RIGHT":"STEERING / LEFT";});
-            Label(card,"Pedals move to the opposite side.\nLarge wheel and steering buttons are enabled.",18,new Vector2(0,-153),new Vector2(540,62));
+            Label(card,"Pedals move to the opposite side.\nLarger wheel and steering buttons are enabled.",18,new Vector2(0,-153),new Vector2(540,62));
             Button("Reset controls",card,Vector2.one*.5f,new Vector2(0,-220),new Vector2(240,44),"RESET DEFAULTS",()=>{game.SetSteeringSide(false);game.SetCameraSensitivity(1);ShowControls(paused);});
             Button("Back",card,Vector2.one*.5f,new Vector2(0,-280),new Vector2(500,48),"BACK / SAVE",()=>{PlayerPrefs.Save();if(paused)ShowPause();else ShowMenu();});
         }
@@ -269,14 +274,16 @@ namespace RoxxParking
 
         private RectTransform Arrow(string name, Vector2 pos, string caption, Action<bool> callback)
         {
-            Button button = Button(name, arrows.transform, Vector2.zero, pos, new Vector2(145, 155), caption, null);
+            Button button = Button(name, arrows.transform, Vector2.zero, pos, new Vector2(175, 185), caption, null);
             button.gameObject.AddComponent<HoldControl>().Changed = callback;
             return (RectTransform)button.transform;
         }
         private RectTransform Hold(string name, Vector2 pos, Vector2 size, string caption, Color color, Action<bool> callback)
         {
             Button button = Button(name, driving.transform, new Vector2(1, 0), pos, size, caption, null);
-            button.image.color = color; button.gameObject.AddComponent<HoldControl>().Changed = callback;
+            button.image.color = color;
+            ColorBlock pressed = button.colors; pressed.pressedColor = new Color(color.r * 0.65f, color.g * 0.65f, color.b * 0.65f, color.a); button.colors = pressed;
+            button.gameObject.AddComponent<HoldControl>().Changed = callback;
             return (RectTransform)button.transform;
         }
         private Button Button(string name, Transform parent, Vector2 anchor, Vector2 pos, Vector2 size, string caption, Action action, bool primary = false)

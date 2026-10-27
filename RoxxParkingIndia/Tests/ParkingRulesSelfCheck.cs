@@ -20,6 +20,14 @@ public static class ParkingRulesSelfCheck
         Check(!ParkingRules.Fits(0, 0, 0, -3.2f, 6.2f, 0), "Invalid bay must not qualify");
         Check(!ParkingRules.Fits(float.NaN, 0, 0, 3.2f, 6.2f, 0), "Invalid positions must fail closed");
         Check(!ParkingRules.Fits(0, 0, float.PositiveInfinity, 3.2f, 6.2f, 0), "Invalid headings must fail closed");
+        // Wheels-inside-bay rule: all four wheels inside at once qualifies,
+        // even if the body would overhang or the heading is not perfect.
+        Check(ParkingRules.WheelsInsideBay(new float[]{-0.88f, 0.88f, -0.88f, 0.88f}, new float[]{1.42f, 1.42f, -1.42f, -1.42f}, 3.2f, 6.2f, 0), "Four wheels inside the bay should qualify");
+        Check(!ParkingRules.WheelsInsideBay(new float[]{-0.88f, 0.88f, -0.88f, 1.7f}, new float[]{1.42f, 1.42f, -1.42f, -1.42f}, 3.2f, 6.2f, 0), "One wheel outside must not qualify");
+        Check(!ParkingRules.WheelsInsideBay(new float[]{-0.88f, 0.88f, -0.88f, 0.88f}, new float[]{1.42f, 1.42f, -1.42f, 3.2f}, 3.2f, 6.2f, 0), "One wheel past the bay end must not qualify");
+        Check(!ParkingRules.WheelsInsideBay(new float[]{-0.88f, 0.88f, -0.88f, 0.88f}, new float[]{1.42f, 1.42f, -1.42f, -1.42f}, 3.2f, 6.2f, 0.5f), "Driving through the bay must not qualify on wheels alone");
+        Check(!ParkingRules.WheelsInsideBay(new float[]{-0.88f, 0.88f, -0.88f}, new float[]{1.42f, 1.42f, -1.42f}, 3.2f, 6.2f, 0), "Fewer than four wheels must not qualify");
+        Check(!ParkingRules.WheelsInsideBay(new float[]{float.NaN, 0.88f, -0.88f, 0.88f}, new float[]{1.42f, 1.42f, -1.42f, -1.42f}, 3.2f, 6.2f, 0), "Invalid wheel positions must fail closed");
         float hold = 0;
         for (int i = 0; i < 81; i++) hold = ParkingRules.Accumulate(hold, true, 0.02f);
         Check(hold == ParkingRules.HoldSeconds, "Continuous eligible hold must complete");
@@ -48,7 +56,7 @@ public static class ParkingRulesSelfCheck
         Check(gate.Openness==before,"Paused/invalid tick cannot advance gate");
         Check(ParkingRules.PaintUnlocked(3,0)&&!ParkingRules.PaintUnlocked(4,5)&&ParkingRules.PaintUnlocked(4,6),"First trial paint threshold");
         Check(!ParkingRules.PaintUnlocked(5,14)&&ParkingRules.PaintUnlocked(5,15)&&!ParkingRules.PaintUnlocked(6,18),"Second paint threshold and invalid index");
-        Console.WriteLine("PASS: parking footprint, heading, speed and continuous hold rules.");
+        Console.WriteLine("PASS: parking footprint, wheel-inside-bay, heading, speed and continuous hold rules.");
         return 0;
     }
 }
